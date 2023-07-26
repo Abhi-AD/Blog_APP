@@ -1,0 +1,58 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Blog</title>
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'css/blog.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+  <body>
+     <div class="page-header">
+          <!-- after login in the user working form  -->
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}" class="top-menu">
+               <span class="material-symbols-outlined lg-icons">logout</span>
+          </a>
+
+
+          <a href="{% url 'post-create' %}" class="top-menu">
+               <span class="material-symbols-outlined lg-icons">Add</span>
+          </a>
+
+
+          <a href="{% url 'draft-list' %}" class="top-menu">
+               <span class="material-symbols-outlined lg-icons">Draft</span>
+          </a>
+
+
+
+         
+          {% else %}
+          <!-- user login this blog form  -->
+          <a href="{% url 'login' %}" class="top-menu">
+               <span class="material-symbols-outlined lg-icons">login</span>
+          </a>
+          {% endif %}
+          <h1>
+               <a href="/">
+                 <img src="{% static 'img/favicon.ico' %}" height="50px" width="50px;" />
+                 Personal Blog
+               </a>
+             </h1>
+     </div>
+
+     <div class="container">
+          {% block content%}
+          {%endblock content%}
+     </div>
+    
+
+
+
+
+    <script src="{% static 'js/script.js'%}" ></script>
+  </body>
+</html>

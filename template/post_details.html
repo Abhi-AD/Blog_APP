@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="row">
+     <div class="col">
+          <div class="post">
+               <div class="date">{{post.published_date}}</div>
+               <h1><a href="">{{post.title}}</a></h1>
+               <div class="mt-2">
+                    <a href="{% url 'post-update' post.pk %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'post-delete' post.pk %}" class="btn btn-danger">Delete</a>
+               </div>
+               <div class="date author">@{{post.author.username}}</div>
+               <p>{{post.content}}</p>
+          </div>
+     </div>
+</div>
+
+{%endblock content%}

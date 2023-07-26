@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="row">
+     <div class="col">
+          {% for post in posts%}
+          <div class="post">
+               <div class="date btn btn-secondary text-info">{{post.published_at}}</div>
+               <h1><a href="{% url 'post-detail' post.pk %}" class="text-dark">{{post.title}}</a></h1>
+               <div class="date author"><h1 class="text-info">@{{post.author.username}}</h1></div>
+               <p class="text-secondary">{{post.content | truncatechars:345}} <a href="{% url 'post-detail' post.pk %}" class="btn btn-info text-light">View More....</a></p>
+          </div>
+          {% endfor %}
+     </div>
+</div>
+
+{%endblock content%}
