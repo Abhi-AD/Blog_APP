@@ -31,31 +31,29 @@ This project is an extended version of [A Basic Django Blog App](https://github.
   pip install django
 ```
 
-
-  4. Install django
-
-```bash
-  pip install pillow
-```
-  5. Clone the project
+  4. Clone the project
 
 ```bash
   git clone https://github.com/Abhi-AD/Blog_APP
 ```
-  6. Createsuperuser
+  5. Createsuperuser
 
 ```bash
   python manage.py createsuperuser
 ```
-  7. Makemigrations
+  6. Makemigrations
 
 ```bash
   python manage.py makemigrations
 ```
-   8. Migrate
+   7. Migrate
 
 ```bash
   python manage.py migrate
+```
+  8. Runserver
+```bash
+  python manage.py runserver
 ```
 
 ## Running Tests
